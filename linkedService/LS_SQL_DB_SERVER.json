@@ -1,6 +1,5 @@
 {
 	"name": "LS_SQL_DB_SERVER",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureSqlDatabase",
@@ -11,7 +10,15 @@
 			"trustServerCertificate": false,
 			"authenticationType": "SQL",
 			"userName": "NikitaMarathe2008",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEUwRUY2RkI3LUM0QUYtNDc2Qy1BODRFLUU4NzdGOUVFQTNCQ18xOWU4NjAzNC01OTRhLTQwN2UtYjBkYi1kMmRiZWIzNjU1Y2UiDQp9"
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sql-db-nikita"
+			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
