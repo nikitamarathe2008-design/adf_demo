@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "MaratheNikita2008-adf-demo1"
+		},
+		"LS_SQL_DB_SERVER_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://nikksdb.dfs.core.windows.net/"
+		},
+		"DemoAzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://nikksdb.dfs.core.windows.net/"
+		},
+		"LS_SQL_DB_SERVER_properties_typeProperties_server": {
+			"value": "nikks-db.database.windows.net"
+		},
+		"LS_SQL_DB_SERVER_properties_typeProperties_database": {
+			"value": "nikks-sql-db"
+		},
+		"LS_SQL_DB_SERVER_properties_typeProperties_userName": {
+			"value": "NikitaMarathe2008"
+		},
+		"TGR_EVENT_properties_Storage_Trigger_Demo_parameters_File_name": {
+			"value": "@triggerBody().fileName"
+		},
+		"TGR_EVENT_properties_typeProperties_scope": {
+			"value": "/subscriptions/4d23a430-aeb0-44f3-9101-f83c02eca57d/resourceGroups/Nikita_DF/providers/Microsoft.Storage/storageAccounts/nikksdb"
+		}
+	}
+}
