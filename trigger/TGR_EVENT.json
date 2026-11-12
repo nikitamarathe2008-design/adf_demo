@@ -1,0 +1,28 @@
+{
+	"name": "TGR_EVENT",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Storage_Trigger_Demo",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"File_name": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/Source_Folder",
+			"blobPathEndsWith": ".txt",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/4d23a430-aeb0-44f3-9101-f83c02eca57d/resourceGroups/Nikita_DF/providers/Microsoft.Storage/storageAccounts/nikksdb",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

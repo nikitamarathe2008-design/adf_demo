@@ -1,0 +1,37 @@
+{
+	"name": "ADLS_CSV_DemoDL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DemoAzureDataLakeStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"table_name": {
+				"type": "string",
+				"defaultValue": "customers"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@concat(toLower(dataset().table_name),'_',utcNow())",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@toLower(dataset().table_name)\n",
+					"type": "Expression"
+				},
+				"fileSystem": "demo-db-container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

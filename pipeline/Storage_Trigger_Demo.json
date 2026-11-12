@@ -1,0 +1,71 @@
+{
+	"name": "Storage_Trigger_Demo",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"wildcardFolderPath": "Source_Folder",
+							"wildcardFileName": {
+								"value": "@pipeline().parameters.File_name",
+								"type": "Expression"
+							},
+							"deleteFilesAfterCompletion": false
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Binary_Source",
+						"type": "DatasetReference",
+						"parameters": {
+							"Container_Name": "source"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Binary_target",
+						"type": "DatasetReference",
+						"parameters": {
+							"Folder": "Taget_Folder2"
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"File_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-11-12T16:50:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

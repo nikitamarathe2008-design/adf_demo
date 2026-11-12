@@ -1,0 +1,21 @@
+{
+	"name": "MaratheNikita2008-adf-demo1",
+	"properties": {
+		"globalParameters": {
+			"email_recepient": {
+				"type": "string",
+				"value": "nikita4216@outlook.in"
+			}
+		},
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "85e06f6f-76cd-4fc1-9502-f839c421aa5a",
+		"tenantId": "83e96f1b-d7d2-4a3f-9649-ca279baf2f2e"
+	}
+}
